@@ -63,6 +63,8 @@ print('==> Building model..')
 # net = ResNeXt29_2x64d()
 # net = MobileNet()
 # net = MobileNetV2()
+from models.mobilenetv3 import *
+
 net = mobilenetv3_small()
 # net = DPN92()
 # net = ShuffleNetG2()
