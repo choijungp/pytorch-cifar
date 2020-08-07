@@ -64,10 +64,10 @@ print('==> Building model..')
 # net = DenseNet121()
 # net = ResNeXt29_2x64d()
 # net = MobileNet()
-# net = MobileNetV2()
+net = mobilenetv2()
 from models.mobilenetv3 import *
 
-net = mobilenetv3_small()
+# net = mobilenetv3_small()
 # net = DPN92()
 # net = ShuffleNetG2()
 # net = SENet18()
@@ -75,7 +75,7 @@ net = mobilenetv3_small()
 # net = EfficientNetB0()
 # net = RegNetX_200MF()
 net = net.to(device)
-torchsummary.summary(net, (3, 32, 32))
+torchsummary.summary(net, (3, 224, 224))
 if device == 'cuda':
     net = torch.nn.DataParallel(net)
     cudnn.benchmark = True
